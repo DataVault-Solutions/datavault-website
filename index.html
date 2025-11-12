@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataVault Solutions | E-commerce ETL Automation & Analytics</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Load Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles for professional look and smooth scrolling */
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            background-color: #f7f9fb; /* Very light subtle background */
+        }
+        .dataflow-gradient {
+            background: linear-gradient(90deg, #1f2937, #10b981); /* Dark gray to green/teal */
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .dataflow-cta-button {
+            background-color: #10b981;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        .dataflow-cta-button:hover {
+            background-color: #059669;
+            box-shadow: 0 4px 6px -1px rgba(16, 185, 129, 0.5);
+        }
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25D366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        .whatsapp-float:hover {
+            background-color: #1FAF59;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Header & Sticky Navigation -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-4">
+            <!-- Logo/Brand Name (UPDATED: DataVault Solutions) -->
+            <div class="flex items-center space-x-2">
+                <i data-lucide="cloud-cog" class="w-6 h-6 text-[#10b981]"></i>
+                <a href="#home" class="text-2xl font-bold tracking-tight text-gray-900">DataVault <span class="text-[#10b981]">Solutions</span></a>
+            </div>
+
+            <!-- Navigation Links (Hidden on mobile) -->
+            <div class="hidden md:flex space-x-8 text-lg font-medium">
+                <a href="#services" class="text-gray-600 hover:text-gray-900 transition duration-150">Services</a>
+                <a href="#case-studies" class="text-gray-600 hover:text-gray-900 transition duration-150">Case Studies</a>
+                <a href="#blog" class="text-gray-600 hover:text-gray-900 transition duration-150">Blog</a>
+                <a href="#contact" class="text-gray-600 hover:text-gray-900 transition duration-150">Contact</a>
+            </div>
+
+            <!-- CTA Button -->
+            <a href="#contact" class="hidden md:block dataflow-cta-button px-4 py-2 rounded-lg font-semibold shadow-md">
+                Start Automation Consultation
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-gray-600 hover:text-gray-900">
+                <i data-lucide="menu" class="w-7 h-7"></i>
+            </button>
+        </nav>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
+            <a href="#services" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 transition duration-150">Services</a>
+            <a href="#case-studies" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 transition duration-150">Case Studies</a>
+            <a href="#blog" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 transition duration-150">Blog</a>
+            <a href="#contact" class="block px-4 py-3 text-gray-700 hover:bg-gray-50 transition duration-150">Contact</a>
+            <a href="#contact" class="block px-4 py-3 dataflow-cta-button text-center font-semibold rounded-b-lg">
+                Start Automation Consultation
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- 1. Hero Section -->
+        <section id="home" class="dataflow-gradient text-white py-24 sm:py-32">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <span class="text-xl font-medium mb-3 block text-gray-200">AI-Powered ETL & Strategic Analytics Experts</span>
+                <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight mb-6">
+                    Automate Your Data Flow. <span class="text-yellow-300 block sm:inline">Accelerate Decisions.</span>
+                </h1>
+                <p class="text-xl sm:text-2xl max-w-3xl mx-auto mb-10 opacity-90">
+                    Stop manual data extraction. We build seamless, Python-powered ETL pipelines from **any data source** to **Power BI**, delivering real-time **predictive** insights and **automated planning**.
+                </p>
+                <a href="#contact" class="dataflow-cta-button text-xl px-10 py-4 rounded-full font-bold shadow-lg uppercase tracking-wider transform transition duration-300 hover:scale-[1.03]">
+                    Schedule a Discovery Call
+                </a>
+                <p class="mt-4 text-sm text-gray-300">Unlock 90%+ reporting efficiency.</p>
+            </div>
+        </section>
+
+        <!-- 2. Services Overview -->
+        <section id="services" class="py-20 sm:py-28 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4">Our Data Automation Pillars</h2>
+                <p class="text-xl text-center max-w-2xl mx-auto mb-16 text-gray-600">
+                    We cover the entire data lifecycle, ensuring clean, trustworthy data is always ready for analysis.
+                </p>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Pillar 1: Source (UPDATED: Generalized) -->
+                    <div class="bg-gray-50 p-6 rounded-xl shadow-lg border-t-4 border-teal-500 card-hover transition duration-300">
+                        <i data-lucide="plug-zap" class="w-10 h-10 text-teal-600 mb-4"></i>
+                        <h3 class="text-2xl font-bold mb-3">1. Data Sourcing (Multi-Platform)</h3>
+                        <p class="text-gray-600">Secure extraction from diverse sources including **Shopify**, CRM systems (Salesforce), APIs, and relational databases. We handle compliance and efficient retrieval.</p>
+                        <p class="mt-4 text-sm font-semibold text-teal-600">Benefit: Consolidate data from all business channels.</p>
+                    </div>
+
+                    <!-- Pillar 2: Process (UPDATED: Added ML/AI Focus) -->
+                    <div class="bg-gray-50 p-6 rounded-xl shadow-lg border-t-4 border-blue-500 card-hover transition duration-300">
+                        <i data-lucide="code" class="w-10 h-10 text-blue-600 mb-4"></i>
+                        <h3 class="text-2xl font-bold mb-3">2. ETL + AI/ML Modeling</h3>
+                        <p class="text-gray-600">The core engine, using custom **Python and ML frameworks** to not only clean data but also build **AI forecasting models**, run **stockout predictions**, and generate **promotion optimization knowledge**. Enables advanced prescriptive planning.</p>
+                        <p class="mt-4 text-sm font-semibold text-blue-600">Benefit: **Predictive & Prescriptive Insights**.</p>
+                    </div>
+
+                    <!-- Pillar 3: Store -->
+                    <div class="bg-gray-50 p-6 rounded-xl shadow-lg border-t-4 border-indigo-500 card-hover transition duration-300">
+                        <i data-lucide="database" class="w-10 h-10 text-indigo-600 mb-4"></i>
+                        <h3 class="text-2xl font-bold mb-3">3. Cloud Storage Solutions</h3>
+                        <p class="text-gray-600">Guidance and deployment in scalable, secure storage environments (AWS, Azure, Snowflake, BigQuery). Build future-proof data warehouses.</p>
+                        <p class="mt-4 text-sm font-semibold text-indigo-600">Benefit: Optimized query performance & security.</p>
+                    </div>
+
+                    <!-- Pillar 4: Visualize -->
+                    <div class="bg-gray-50 p-6 rounded-xl shadow-lg border-t-4 border-red-500 card-hover transition duration-300">
+                        <i data-lucide="bar-chart-2" class="w-10 h-10 text-red-600 mb-4"></i>
+                        <h3 class="text-2xl font-bold mb-3">4. Power BI Reporting</h3>
+                        <p class="text-gray-600">Translating cleaned, predicted data into actionable intelligence. Custom Power BI dashboards designed for executive and operational teams to drive strategic planning.</p>
+                        <p class="mt-4 text-sm font-semibold text-red-600">Benefit: Increased decision velocity.</p>
+                    </div>
+                </div>
+
+                <div class="text-center mt-12">
+                    <a href="#contact" class="dataflow-cta-button px-8 py-3 rounded-lg font-semibold shadow-md text-lg inline-flex items-center space-x-2">
+                        <span>Get a Customized Solution</span>
+                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Why Automate? (USP Section - UPDATED: AI Focus) -->
+        <section class="py-20 sm:py-28 bg-gray-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-3xl sm:text-4xl font-bold mb-6">The DataVault Advantage: Predictive Power, Automation, and Strategic Planning</h2>
+                        <p class="text-lg text-gray-700 mb-6">
+                            Unlike generic consultancies, we focus on deep, reliable automation using modern engineering and **Machine Learning** principles. Our solutions are built in **Python**, ensuring unparalleled flexibility and scalability as your business moves from historical reporting to **prescriptive planning** (what to sell, where to sell).
+                        </p>
+                        <ul class="space-y-4 text-gray-700">
+                            <li class="flex items-start space-x-3">
+                                <i data-lucide="brain" class="w-6 h-6 text-yellow-500 flex-shrink-0 mt-1"></i>
+                                <span>**Prescriptive Planning:** AI-driven answers to *what to sell, where to sell*, and optimal pricing strategies.</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <i data-lucide="trending-up" class="w-6 h-6 text-green-500 flex-shrink-0 mt-1"></i>
+                                <span>**Forecasting Accuracy:** Implement time-series models (e.g., ARIMA/Prophet) for reliable sales and inventory forecasts.</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <i data-lucide="zap" class="w-6 h-6 text-red-500 flex-shrink-0 mt-1"></i>
+                                <span>**Stockout Prevention:** Proactive alerts and predictive modeling to eliminate costly inventory issues.</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <i data-lucide="box" class="w-6 h-6 text-indigo-500 flex-shrink-0 mt-1"></i>
+                                <span>**Cloud Agnostic:** Solutions deployed across AWS, GCP, or Azure, tailored to your existing infrastructure.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Data Flow Diagram SVG -->
+                    <div class="flex justify-center items-center">
+                        <svg class="w-full max-w-lg h-auto" viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Source Nodes -->
+                            <rect x="10" y="20" width="60" height="30" rx="5" fill="#3B82F6"/>
+                            <text x="40" y="40" text-anchor="middle" fill="white" font-size="12">Source A</text>
+                            <rect x="10" y="90" width="60" height="30" rx="5" fill="#3B82F6"/>
+                            <text x="40" y="110" text-anchor="middle" fill="white" font-size="12">Source B</text>
+                            
+                            <!-- ETL Node (Center) -->
+                            <polygon points="150,5 250,5 275,50 250,95 150,95 125,50" fill="#10B981"/>
+                            <text x="200" y="55" text-anchor="middle" fill="white" font-size="14" font-weight="bold">AI/Python ETL</text>
+
+                            <!-- Storage Node -->
+                            <rect x="330" y="75" width="60" height="50" rx="25" fill="#8B5CF6"/>
+                            <text x="360" y="105" text-anchor="middle" fill="white" font-size="12">Cloud DB</text>
+
+                            <!-- Arrows -->
+                            <!-- A to ETL -->
+                            <path d="M70 35 H125 L150 50" stroke="#4B5563" stroke-width="2" marker-end="url(#arrowhead)"/>
+                            <!-- B to ETL -->
+                            <path d="M70 105 H125 L150 50" stroke="#4B5563" stroke-width="2" marker-end="url(#arrowhead)"/>
+                            <!-- ETL to Storage -->
+                            <path d="M275 50 H330" stroke="#4B5563" stroke-width="2" marker-end="url(#arrowhead)"/>
+                            
+                            <!-- Definitions for arrowhead -->
+                            <defs>
+                                <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+                                    <polygon points="0 0, 10 3.5, 0 7" fill="#4B5563" />
+                                </marker>
+                            </defs>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 4. Featured Case Study -->
+        <section id="case-studies" class="py-20 sm:py-28">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl sm:text-4xl font-bold text-center mb-16">See Our Impact: Featured Success Story</h2>
+
+                <div class="bg-white p-8 md:p-12 rounded-2xl shadow-xl border-t-8 border-violet-600">
+                    <span class="inline-block bg-violet-100 text-violet-700 text-sm font-semibold px-4 py-1 rounded-full mb-6">Client Success Spotlight</span>
+                    
+                    <h3 class="text-3xl font-bold text-gray-900 mb-8">E-commerce Retailer: Achieving 95% Reporting Efficiency</h3>
+
+                    <div class="grid lg:grid-cols-3 gap-8">
+                        <div>
+                            <h4 class="text-xl font-semibold mb-3 text-gray-700">The Challenge</h4>
+                            <p class="text-gray-600">The client was spending **40+ hours per week** on manual data export and aggregation of sales reports from various platforms (including Shopify), leading to delayed financial decisions and high operational costs.</p>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-semibold mb-3 text-gray-700">The Solution</h4>
+                            <p class="text-gray-600">We implemented a fully automated **Multi-Source to Snowflake** ETL pipeline using custom Python scripting, feeding a real-time Power BI dashboard for inventory and margin analysis.</p>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-semibold mb-3 text-gray-700">Key Results</h4>
+                            <ul class="space-y-2 text-gray-700 font-medium">
+                                <li class="text-green-600 flex items-center"><i data-lucide="trending-up" class="w-5 h-5 mr-2"></i> Reduced reporting time from 45 hours to **2 hours/week.**</li>
+                                <li class="text-green-600 flex items-center"><i data-lucide="shield-check" class="w-5 h-5 mr-2"></i> Data accuracy increased to **99.8%.**</li>
+                                <li class="text-green-600 flex items-center"><i data-lucide="dollar-sign" class="w-5 h-5 mr-2"></i> Identified significant ROI savings in inventory holding costs.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="mt-10 pt-6 border-t border-gray-200">
+                        <blockquote class="text-lg italic text-gray-600">
+                            "DataVault Solutions streamlined our entire operation. We moved from historical reporting to predictive decision-making almost overnight."
+                        </blockquote>
+                        <p class="mt-2 text-right font-semibold text-gray-800">— Client CEO, Testimonial</p>
+                    </div>
+
+                    <div class="text-center mt-10">
+                        <a href="#" class="px-6 py-3 border border-violet-600 text-violet-600 rounded-lg font-semibold hover:bg-violet-50 transition duration-300">
+                            View All Case Studies
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Latest Insights (Blog Teaser) -->
+        <section id="blog" class="py-20 sm:py-28 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl sm:text-4xl font-bold text-center mb-16">Latest Insights & Industry Best Practices</h2>
+                
+                <!-- NEW: AI Blog Idea Generator -->
+                <div class="max-w-4xl mx-auto bg-white p-8 rounded-2xl shadow-xl mb-16">
+                    <h3 class="text-2xl font-bold text-center mb-4 text-gray-900">
+                        <i data-lucide="zap" class="w-6 h-6 inline-block text-yellow-500 mr-2"></i>
+                        ✨ AI Content Strategy Tool
+                    </h3>
+                    <p class="text-center text-gray-600 mb-6">
+                        Need thought leadership? Enter a high-level topic (e.g., "AI in ETL" or "Snowflake best practices") to instantly generate optimized blog titles and summaries.
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <input type="text" id="blog-topic-input" placeholder="Enter topic here (e.g., Data Observability)" 
+                               class="flex-grow px-4 py-3 border border-gray-300 rounded-lg focus:ring-teal-500 focus:border-teal-500 transition duration-150">
+                        <button onclick="generateBlogIdeas()" id="generate-button"
+                                class="dataflow-cta-button px-6 py-3 rounded-lg font-bold shadow-md flex items-center justify-center">
+                            <i data-lucide="sparkles" class="w-5 h-5 mr-2"></i>
+                            Generate Ideas
+                        </button>
+                    </div>
+
+                    <div id="ai-loading-message" class="hidden mt-6 text-center text-teal-600 font-semibold">
+                        <i data-lucide="loader-circle" class="w-6 h-6 inline-block animate-spin mr-2"></i>
+                        Generating SEO-optimized insights...
+                    </div>
+                    
+                    <div id="ai-blog-results" class="mt-8 space-y-4">
+                        <!-- AI Generated content will appear here -->
+                    </div>
+                </div>
+                <!-- END AI Blog Idea Generator -->
+
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Article 1 -->
+                    <article class="bg-white rounded-xl shadow-lg overflow-hidden card-hover transition duration-300">
+                        <div class="p-6">
+                            <span class="text-xs font-semibold text-teal-600 uppercase">Automation</span>
+                            <h3 class="text-xl font-bold mt-2 mb-3">The Best Python Libraries for E-commerce ETL</h3>
+                            <p class="text-gray-600 mb-4">A deep dive into Pandas, SQLAlchemy, and Airflow configurations vital for high-volume data sourcing.</p>
+                            <a href="#" class="text-sm font-semibold text-teal-600 hover:text-teal-800">Read More &rarr;</a>
+                        </div>
+                    </article>
+
+                    <!-- Article 2 -->
+                    <article class="bg-white rounded-xl shadow-lg overflow-hidden card-hover transition duration-300">
+                        <div class="p-6">
+                            <span class="text-xs font-semibold text-blue-600 uppercase">Visualization</span>
+                            <h3 class="text-xl font-bold mt-2 mb-3">Designing Power BI Dashboards for Executive Consumption</h3>
+                            <p class="text-gray-600 mb-4">Tips on simplifying metrics, choosing the right visuals, and focusing on C-suite level KPIs.</p>
+                            <a href="#" class="text-sm font-semibold text-blue-600 hover:text-blue-800">Read More &rarr;</a>
+                        </div>
+                    </article>
+
+                    <!-- Article 3 -->
+                    <article class="bg-white rounded-xl shadow-lg overflow-hidden card-hover transition duration-300">
+                        <div class="p-6">
+                            <span class="text-xs font-semibold text-indigo-600 uppercase">Cloud Strategy</span>
+                            <h3 class="text-xl font-bold mt-2 mb-3">Comparing Cloud Solutions for E-commerce Data: Snowflake vs. BigQuery</h3>
+                            <p class="text-gray-600 mb-4">A detailed breakdown of cost, performance, and best use cases for modern data warehousing.</p>
+                            <a href="#" class="text-sm font-semibold text-indigo-600 hover:text-indigo-800">Read More &rarr;</a>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="text-center mt-12">
+                    <a href="#" class="px-6 py-3 border border-gray-400 text-gray-700 rounded-lg font-semibold hover:bg-white transition duration-300">
+                        Explore Our Full Blog
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Contact Page / Contact Form -->
+        <section id="contact" class="py-20 sm:py-28 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4">Ready to Automate Your Data?</h2>
+                <p class="text-xl text-center max-w-2xl mx-auto mb-12 text-gray-600">
+                    Get in touch with our specialists today. Let's discuss your data challenges and build a scalable solution.
+                </p>
+
+                <div class="max-w-3xl mx-auto bg-gray-100 p-8 rounded-2xl shadow-xl">
+                    <form action="#" method="POST" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                            <input type="text" name="name" id="name" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-teal-500 focus:border-teal-500 transition duration-150">
+                        </div>
+                        <div class="grid sm:grid-cols-2 gap-6">
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Work Email</label>
+                                <input type="email" name="email" id="email" required
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-teal-500 focus:border-teal-500 transition duration-150">
+                            </div>
+                            <div>
+                                <label for="company" class="block text-sm font-medium text-gray-700 mb-1">Company Name</label>
+                                <input type="text" name="company" id="company"
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-teal-500 focus:border-teal-500 transition duration-150">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">How can we help you automate?</label>
+                            <textarea id="message" name="message" rows="4" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-teal-500 focus:border-teal-500 transition duration-150"></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="dataflow-cta-button px-10 py-3 rounded-lg font-bold text-lg shadow-md hover:shadow-lg transition duration-300">
+                                Send Inquiry
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 border-b border-gray-700 pb-8 mb-8">
+                <!-- Brand Info -->
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i data-lucide="cloud-cog" class="w-6 h-6 text-[#10b981]"></i>
+                        <span class="text-xl font-bold tracking-tight">DataVault Solutions</span>
+                    </div>
+                    <p class="text-gray-400 text-sm">Specializing in Python ETL, multi-source data pipelines, and actionable Power BI reporting.</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h5 class="text-lg font-semibold mb-4 text-gray-200">Quick Links</h5>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#services" class="text-gray-400 hover:text-[#10b981]">Our Services</a></li>
+                        <li><a href="#case-studies" class="text-gray-400 hover:text-[#10b981]">Case Studies Hub</a></li>
+                        <li><a href="#blog" class="text-gray-400 hover:text-[#10b981]">Blog & Insights</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info (UPDATED: Business Details) -->
+                <div>
+                    <h5 class="text-lg font-semibold mb-4 text-gray-200">Connect</h5>
+                    <ul class="space-y-2 text-sm">
+                        <li class="text-gray-400">contact@datavaultsolutions.co.uk</li>
+                        <li class="text-gray-400">+44 7404 487866</li>
+                        <li class="text-gray-400">UK Registered Data Consultancy</li>
+                    </ul>
+                </div>
+
+                <!-- Social Links -->
+                <div>
+                    <h5 class="text-lg font-semibold mb-4 text-gray-200">Follow Us</h5>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-[#10b981]"><i data-lucide="linkedin" class="w-6 h-6"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-[#10b981]"><i data-lucide="twitter" class="w-6 h-6"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-[#10b981]"><i data-lucide="github" class="w-6 h-6"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center text-sm text-gray-500 pt-4">
+                &copy; 2025 DataVault Solutions Consultancy. All rights reserved.
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Floating WhatsApp Button (NEW) -->
+    <a href="https://wa.me/447404487866" class="whatsapp-float" target="_blank">
+        <!-- SVG for WhatsApp Icon -->
+        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8">
+            <path d="M21 15V9a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2z"></path>
+            <path d="M12 11h.01"></path>
+            <path d="M16 11h.01"></path>
+            <path d="M8 11h.01"></path>
+            <path d="M12 15h.01"></path>
+            <path d="M16 15h.01"></path>
+            <path d="M8 15h.01"></path>
+        </svg>
+    </a>
+
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle Logic
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Simple form submission handler (prevent default for demo)
+        const contactForm = document.querySelector('form');
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            // In a real application, this data would be sent to a CRM/backend (e.g., HubSpot/Salesforce integration)
+            console.log('Form submission simulated. Data would be sent to CRM.');
+            // Implement a custom modal or message box instead of alert()
+            const submitButton = e.target.querySelector('button[type="submit"]');
+            submitButton.textContent = 'Inquiry Sent!';
+            submitButton.classList.remove('dataflow-cta-button');
+            submitButton.classList.add('bg-green-500');
+            setTimeout(() => {
+                submitButton.textContent = 'Send Inquiry';
+                submitButton.classList.remove('bg-green-500');
+                submitButton.classList.add('dataflow-cta-button');
+            }, 3000);
+        });
+
+
+        // --- GEMINI API INTEGRATION: AI Content Strategy Tool ---
+
+        const apiKey = "";
+        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+        const systemPrompt = "You are a senior content strategist for DataVault Solutions, a data consultancy specializing in Python ETL, cloud data warehousing, and Power BI. Your task is to generate compelling, SEO-optimized blog ideas based on the provided user topic. The output must be structured as a numbered list of 3 high-impact titles, each followed by a concise, single-paragraph summary explaining the key technical insight the article will cover. Only use the numbered list format.";
+
+        async function fetchWithBackoff(url, options, maxRetries = 5) {
+            for (let attempt = 0; attempt < maxRetries; attempt++) {
+                try {
+                    const response = await fetch(url, options);
+                    if (!response.ok) {
+                        // Handle rate limiting (429) or transient server errors
+                        if (response.status === 429 && attempt < maxRetries - 1) {
+                            const delay = Math.pow(2, attempt) * 1000 + Math.random() * 1000;
+                            await new Promise(resolve => setTimeout(resolve, delay));
+                            continue; // Retry
+                        }
+                        throw new Error(`HTTP error! Status: ${response.status}`);
+                    }
+                    return response;
+                } catch (error) {
+                    if (attempt === maxRetries - 1) throw error;
+                    // Exponential backoff delay
+                    const delay = Math.pow(2, attempt) * 1000 + Math.random() * 1000;
+                    await new Promise(resolve => setTimeout(resolve, delay));
+                }
+            }
+        }
+
+        async function generateBlogIdeas() {
+            const topicInput = document.getElementById('blog-topic-input');
+            const resultsDiv = document.getElementById('ai-blog-results');
+            const loadingMessage = document.getElementById('ai-loading-message');
+            const topic = topicInput.value.trim();
+
+            if (!topic) {
+                resultsDiv.innerHTML = '<p class="p-4 rounded-lg bg-red-100 text-red-700">Please enter a topic to generate ideas.</p>';
+                return;
+            }
+
+            // Show loading state
+            loadingMessage.classList.remove('hidden');
+            resultsDiv.innerHTML = '';
+
+            const userQuery = `Generate high-impact blog ideas focused on data automation and ETL consultancy, based on this core topic: ${topic}.`;
+
+            const payload = {
+                contents: [{ parts: [{ text: userQuery }] }],
+                tools: [{ "google_search": {} }], // Use Google Search for grounding on industry trends
+                systemInstruction: {
+                    parts: [{ text: systemPrompt }]
+                },
+            };
+
+            try {
+                const response = await fetchWithBackoff(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                const result = await response.json();
+                const candidate = result.candidates?.[0];
+
+                if (candidate && candidate.content?.parts?.[0]?.text) {
+                    const text = candidate.content.parts[0].text;
+                    
+                    // Format output nicely for the webpage
+                    let formattedHtml = `<div class="p-6 bg-white rounded-xl shadow-inner border border-gray-200">
+                        <h4 class="text-xl font-bold mb-4 text-gray-800">Generated Insights for: <span class="text-teal-600">${topic}</span></h4>
+                        <div class="prose max-w-none text-gray-600">${text.replace(/\n/g, '<br><br>')}</div>
+                    </div>`;
+
+                    resultsDiv.innerHTML = formattedHtml;
+                    
+                    // Optional: Extract and display grounding sources if available
+                    let sourcesHtml = '';
+                    const groundingMetadata = candidate.groundingMetadata;
+                    if (groundingMetadata && groundingMetadata.groundingAttributions) {
+                        const sources = groundingMetadata.groundingAttributions
+                            .map(attribution => ({
+                                uri: attribution.web?.uri,
+                                title: attribution.web?.title,
+                            }))
+                            .filter(source => source.uri && source.title);
+
+                        if (sources.length > 0) {
+                            sourcesHtml = '<div class="mt-4 text-sm text-gray-500 border-t pt-2">';
+                            sourcesHtml += 'Sources used for grounding:';
+                            sources.forEach(source => {
+                                sourcesHtml += `<br><a href="${source.uri}" target="_blank" class="text-blue-500 hover:text-blue-700">${source.title}</a>`;
+                            });
+                            sourcesHtml += '</div>';
+                            resultsDiv.innerHTML += sourcesHtml;
+                        }
+                    }
+
+                } else {
+                    resultsDiv.innerHTML = '<p class="p-4 rounded-lg bg-red-100 text-red-700">Failed to generate content. Please try a different topic.</p>';
+                }
+
+            } catch (error) {
+                console.error('Gemini API Error:', error);
+                resultsDiv.innerHTML = '<p class="p-4 rounded-lg bg-red-100 text-red-700">An error occurred while connecting to the AI service. Please check the console.</p>';
+            } finally {
+                loadingMessage.classList.add('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
