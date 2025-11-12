@@ -17,9 +17,18 @@
             scroll-behavior: smooth;
             background-color: #f7f9fb; /* Very light subtle background */
         }
+        /* Primary Teal Gradient (Hero) */
         .dataflow-gradient {
             background: linear-gradient(90deg, #1f2937, #10b981); /* Dark gray to green/teal */
         }
+        /* Secondary Accent Color (for visual elements) */
+        .accent-purple {
+            color: #8B5CF6; /* Violet-600 */
+        }
+        .accent-bg-purple {
+            background-color: #8B5CF6; /* Violet-600 */
+        }
+
         .card-hover:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
@@ -109,7 +118,7 @@
                     Automate Your Data Flow. <span class="text-yellow-300 block sm:inline">Accelerate Decisions.</span>
                 </h1>
                 <p class="text-xl sm:text-2xl max-w-3xl mx-auto mb-10 opacity-90">
-                    Stop manual data extraction. We build seamless, Python-powered ETL pipelines from **any data source** to **Power BI**, delivering real-time **predictive** insights and **automated planning**.
+                    Stop manual data extraction. We build seamless, Python-powered ETL pipelines from <strong>any data source</strong> to <strong>Power BI</strong>, delivering real-time <strong>predictive</strong> insights and <strong>automated planning</strong>.
                 </p>
                 <a href="#contact" class="dataflow-cta-button text-xl px-10 py-4 rounded-full font-bold shadow-lg uppercase tracking-wider transform transition duration-300 hover:scale-[1.03]">
                     Schedule a Discovery Call
@@ -127,31 +136,31 @@
                 </p>
 
                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <!-- Pillar 1: Source (UPDATED: Generalized) -->
+                    <!-- Pillar 1: Source (Teal Primary) -->
                     <div class="bg-gray-50 p-6 rounded-xl shadow-lg border-t-4 border-teal-500 card-hover transition duration-300">
                         <i data-lucide="plug-zap" class="w-10 h-10 text-teal-600 mb-4"></i>
                         <h3 class="text-2xl font-bold mb-3">1. Data Sourcing (Multi-Platform)</h3>
-                        <p class="text-gray-600">Secure extraction from diverse sources including **Shopify**, CRM systems (Salesforce), APIs, and relational databases. We handle compliance and efficient retrieval.</p>
+                        <p class="text-gray-600">Secure extraction from diverse sources including <strong>Shopify</strong>, CRM systems (Salesforce), APIs, and relational databases. We handle compliance and efficient retrieval.</p>
                         <p class="mt-4 text-sm font-semibold text-teal-600">Benefit: Consolidate data from all business channels.</p>
                     </div>
 
-                    <!-- Pillar 2: Process (UPDATED: Added ML/AI Focus) -->
+                    <!-- Pillar 2: Process (Blue/AI Focus) -->
                     <div class="bg-gray-50 p-6 rounded-xl shadow-lg border-t-4 border-blue-500 card-hover transition duration-300">
                         <i data-lucide="code" class="w-10 h-10 text-blue-600 mb-4"></i>
                         <h3 class="text-2xl font-bold mb-3">2. ETL + AI/ML Modeling</h3>
-                        <p class="text-gray-600">The core engine, using custom **Python and ML frameworks** to not only clean data but also build **AI forecasting models**, run **stockout predictions**, and generate **promotion optimization knowledge**. Enables advanced prescriptive planning.</p>
-                        <p class="mt-4 text-sm font-semibold text-blue-600">Benefit: **Predictive & Prescriptive Insights**.</p>
+                        <p class="text-gray-600">The core engine, using custom <strong>Python and ML frameworks</strong> to not only clean data but also build <strong>AI forecasting models</strong>, run <strong>stockout predictions</strong>, and generate <strong>promotion optimization knowledge</strong>. Enables advanced prescriptive planning.</p>
+                        <p class="mt-4 text-sm font-semibold text-blue-600">Benefit: <strong>Predictive & Prescriptive Insights</strong>.</p>
                     </div>
 
-                    <!-- Pillar 3: Store -->
-                    <div class="bg-gray-50 p-6 rounded-xl shadow-lg border-t-4 border-indigo-500 card-hover transition duration-300">
-                        <i data-lucide="database" class="w-10 h-10 text-indigo-600 mb-4"></i>
+                    <!-- Pillar 3: Store (Indigo/Cloud Focus - Using Accent Purple) -->
+                    <div class="bg-gray-50 p-6 rounded-xl shadow-lg border-t-4 accent-bg-purple card-hover transition duration-300">
+                        <i data-lucide="database" class="w-10 h-10 accent-purple mb-4"></i>
                         <h3 class="text-2xl font-bold mb-3">3. Cloud Storage Solutions</h3>
                         <p class="text-gray-600">Guidance and deployment in scalable, secure storage environments (AWS, Azure, Snowflake, BigQuery). Build future-proof data warehouses.</p>
-                        <p class="mt-4 text-sm font-semibold text-indigo-600">Benefit: Optimized query performance & security.</p>
+                        <p class="mt-4 text-sm font-semibold accent-purple">Benefit: Optimized query performance & security.</p>
                     </div>
 
-                    <!-- Pillar 4: Visualize -->
+                    <!-- Pillar 4: Visualize (Red/Reporting Focus) -->
                     <div class="bg-gray-50 p-6 rounded-xl shadow-lg border-t-4 border-red-500 card-hover transition duration-300">
                         <i data-lucide="bar-chart-2" class="w-10 h-10 text-red-600 mb-4"></i>
                         <h3 class="text-2xl font-bold mb-3">4. Power BI Reporting</h3>
@@ -169,31 +178,32 @@
             </div>
         </section>
 
-        <!-- 3. Why Automate? (USP Section - UPDATED: AI Focus) -->
+        <!-- 3. Why Automate? (USP Section - Enhanced with Purple) -->
         <section class="py-20 sm:py-28 bg-gray-100">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid lg:grid-cols-2 gap-12 items-center">
                     <div>
                         <h2 class="text-3xl sm:text-4xl font-bold mb-6">The DataVault Advantage: Predictive Power, Automation, and Strategic Planning</h2>
                         <p class="text-lg text-gray-700 mb-6">
-                            Unlike generic consultancies, we focus on deep, reliable automation using modern engineering and **Machine Learning** principles. Our solutions are built in **Python**, ensuring unparalleled flexibility and scalability as your business moves from historical reporting to **prescriptive planning** (what to sell, where to sell).
+                            Unlike generic consultancies, we focus on deep, reliable automation using modern engineering and <strong>Machine Learning</strong> principles. Our solutions are built in <strong>Python</strong>, ensuring unparalleled flexibility and scalability as your business moves from historical reporting to <strong>prescriptive planning</strong> (what to sell, where to sell).
                         </p>
                         <ul class="space-y-4 text-gray-700">
+                            <!-- Enhanced colors on list items -->
                             <li class="flex items-start space-x-3">
-                                <i data-lucide="brain" class="w-6 h-6 text-yellow-500 flex-shrink-0 mt-1"></i>
-                                <span>**Prescriptive Planning:** AI-driven answers to *what to sell, where to sell*, and optimal pricing strategies.</span>
+                                <i data-lucide="brain" class="w-6 h-6 accent-purple flex-shrink-0 mt-1"></i>
+                                <span><strong>Prescriptive Planning:</strong> AI-driven answers to what to sell, where to sell, and optimal pricing strategies.</span>
                             </li>
                             <li class="flex items-start space-x-3">
                                 <i data-lucide="trending-up" class="w-6 h-6 text-green-500 flex-shrink-0 mt-1"></i>
-                                <span>**Forecasting Accuracy:** Implement time-series models (e.g., ARIMA/Prophet) for reliable sales and inventory forecasts.</span>
+                                <span><strong>Forecasting Accuracy:</strong> Implement time-series models (e.g., ARIMA/Prophet) for reliable sales and inventory forecasts.</span>
                             </li>
                             <li class="flex items-start space-x-3">
                                 <i data-lucide="zap" class="w-6 h-6 text-red-500 flex-shrink-0 mt-1"></i>
-                                <span>**Stockout Prevention:** Proactive alerts and predictive modeling to eliminate costly inventory issues.</span>
+                                <span><strong>Stockout Prevention:</strong> Proactive alerts and predictive modeling to eliminate costly inventory issues.</span>
                             </li>
                             <li class="flex items-start space-x-3">
                                 <i data-lucide="box" class="w-6 h-6 text-indigo-500 flex-shrink-0 mt-1"></i>
-                                <span>**Cloud Agnostic:** Solutions deployed across AWS, GCP, or Azure, tailored to your existing infrastructure.</span>
+                                <span><strong>Cloud Agnostic:</strong> Solutions deployed across AWS, GCP, or Azure, tailored to your existing infrastructure.</span>
                             </li>
                         </ul>
                     </div>
@@ -206,11 +216,11 @@
                             <rect x="10" y="90" width="60" height="30" rx="5" fill="#3B82F6"/>
                             <text x="40" y="110" text-anchor="middle" fill="white" font-size="12">Source B</text>
                             
-                            <!-- ETL Node (Center) -->
+                            <!-- ETL Node (Center - Teal Primary) -->
                             <polygon points="150,5 250,5 275,50 250,95 150,95 125,50" fill="#10B981"/>
                             <text x="200" y="55" text-anchor="middle" fill="white" font-size="14" font-weight="bold">AI/Python ETL</text>
 
-                            <!-- Storage Node -->
+                            <!-- Storage Node (Accent Purple) -->
                             <rect x="330" y="75" width="60" height="50" rx="25" fill="#8B5CF6"/>
                             <text x="360" y="105" text-anchor="middle" fill="white" font-size="12">Cloud DB</text>
 
@@ -235,30 +245,30 @@
         </section>
 
 
-        <!-- 4. Featured Case Study -->
+        <!-- 4. Featured Case Study (Enhanced with Purple) -->
         <section id="case-studies" class="py-20 sm:py-28">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-3xl sm:text-4xl font-bold text-center mb-16">See Our Impact: Featured Success Story</h2>
 
-                <div class="bg-white p-8 md:p-12 rounded-2xl shadow-xl border-t-8 border-violet-600">
-                    <span class="inline-block bg-violet-100 text-violet-700 text-sm font-semibold px-4 py-1 rounded-full mb-6">Client Success Spotlight</span>
+                <div class="bg-white p-8 md:p-12 rounded-2xl shadow-xl border-t-8 accent-bg-purple">
+                    <span class="inline-block bg-violet-100 accent-purple text-sm font-semibold px-4 py-1 rounded-full mb-6">Client Success Spotlight</span>
                     
                     <h3 class="text-3xl font-bold text-gray-900 mb-8">E-commerce Retailer: Achieving 95% Reporting Efficiency</h3>
 
                     <div class="grid lg:grid-cols-3 gap-8">
                         <div>
                             <h4 class="text-xl font-semibold mb-3 text-gray-700">The Challenge</h4>
-                            <p class="text-gray-600">The client was spending **40+ hours per week** on manual data export and aggregation of sales reports from various platforms (including Shopify), leading to delayed financial decisions and high operational costs.</p>
+                            <p class="text-gray-600">The client was spending <strong>40+ hours per week</strong> on manual data export and aggregation of sales reports from various platforms (including Shopify), leading to delayed financial decisions and high operational costs.</p>
                         </div>
                         <div>
                             <h4 class="text-xl font-semibold mb-3 text-gray-700">The Solution</h4>
-                            <p class="text-gray-600">We implemented a fully automated **Multi-Source to Snowflake** ETL pipeline using custom Python scripting, feeding a real-time Power BI dashboard for inventory and margin analysis.</p>
+                            <p class="text-gray-600">We implemented a fully automated <strong>Multi-Source to Snowflake</strong> ETL pipeline using custom Python scripting, feeding a real-time Power BI dashboard for inventory and margin analysis.</p>
                         </div>
                         <div>
                             <h4 class="text-xl font-semibold mb-3 text-gray-700">Key Results</h4>
                             <ul class="space-y-2 text-gray-700 font-medium">
-                                <li class="text-green-600 flex items-center"><i data-lucide="trending-up" class="w-5 h-5 mr-2"></i> Reduced reporting time from 45 hours to **2 hours/week.**</li>
-                                <li class="text-green-600 flex items-center"><i data-lucide="shield-check" class="w-5 h-5 mr-2"></i> Data accuracy increased to **99.8%.**</li>
+                                <li class="text-green-600 flex items-center"><i data-lucide="trending-up" class="w-5 h-5 mr-2"></i> Reduced reporting time from 45 hours to <strong>2 hours/week.</strong></li>
+                                <li class="text-green-600 flex items-center"><i data-lucide="shield-check" class="w-5 h-5 mr-2"></i> Data accuracy increased to <strong>99.8%.</strong></li>
                                 <li class="text-green-600 flex items-center"><i data-lucide="dollar-sign" class="w-5 h-5 mr-2"></i> Identified significant ROI savings in inventory holding costs.</li>
                             </ul>
                         </div>
@@ -272,7 +282,7 @@
                     </div>
 
                     <div class="text-center mt-10">
-                        <a href="#" class="px-6 py-3 border border-violet-600 text-violet-600 rounded-lg font-semibold hover:bg-violet-50 transition duration-300">
+                        <a href="#" class="px-6 py-3 border border-violet-600 accent-purple rounded-lg font-semibold hover:bg-violet-50 transition duration-300">
                             View All Case Studies
                         </a>
                     </div>
@@ -288,7 +298,7 @@
                 <!-- NEW: AI Blog Idea Generator -->
                 <div class="max-w-4xl mx-auto bg-white p-8 rounded-2xl shadow-xl mb-16">
                     <h3 class="text-2xl font-bold text-center mb-4 text-gray-900">
-                        <i data-lucide="zap" class="w-6 h-6 inline-block text-yellow-500 mr-2"></i>
+                        <i data-lucide="zap" class="w-6 h-6 inline-block accent-purple mr-2"></i>
                         ✨ AI Content Strategy Tool
                     </h3>
                     <p class="text-center text-gray-600 mb-6">
@@ -340,10 +350,10 @@
                     <!-- Article 3 -->
                     <article class="bg-white rounded-xl shadow-lg overflow-hidden card-hover transition duration-300">
                         <div class="p-6">
-                            <span class="text-xs font-semibold text-indigo-600 uppercase">Cloud Strategy</span>
+                            <span class="text-xs font-semibold accent-purple uppercase">Cloud Strategy</span>
                             <h3 class="text-xl font-bold mt-2 mb-3">Comparing Cloud Solutions for E-commerce Data: Snowflake vs. BigQuery</h3>
                             <p class="text-gray-600 mb-4">A detailed breakdown of cost, performance, and best use cases for modern data warehousing.</p>
-                            <a href="#" class="text-sm font-semibold text-indigo-600 hover:text-indigo-800">Read More &rarr;</a>
+                            <a href="#" class="text-sm font-semibold accent-purple hover:text-violet-800">Read More &rarr;</a>
                         </div>
                     </article>
                 </div>
@@ -365,7 +375,8 @@
                 </p>
 
                 <div class="max-w-3xl mx-auto bg-gray-100 p-8 rounded-2xl shadow-xl">
-                    <form action="#" method="POST" class="space-y-6">
+                    <!-- FORM ACTION UPDATED TO USE FORMSUBMIT.CO -->
+                    <form action="https://formsubmit.co/mubasher.ali@datavaultsolutions.co.uk" method="POST" class="space-y-6">
                         <div>
                             <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
                             <input type="text" name="name" id="name" required
@@ -425,8 +436,10 @@
                 <!-- Contact Info (UPDATED: Business Details) -->
                 <div>
                     <h5 class="text-lg font-semibold mb-4 text-gray-200">Connect</h5>
+                    <!-- ADDED BOTH EMAILS -->
                     <ul class="space-y-2 text-sm">
-                        <li class="text-gray-400">contact@datavaultsolutions.co.uk</li>
+                        <li class="text-gray-400">General: contact@datavaultsolutions.co.uk</li>
+                        <li class="text-gray-400">Inquiries: mubasher.ali@datavaultsolutions.co.uk</li>
                         <li class="text-gray-400">+44 7404 487866</li>
                         <li class="text-gray-400">UK Registered Data Consultancy</li>
                     </ul>
@@ -484,22 +497,13 @@
             });
         });
 
-        // Simple form submission handler (prevent default for demo)
+        // Simple form submission handler (formsubmit.co handles email sending and redirect)
         const contactForm = document.querySelector('form');
         contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            // In a real application, this data would be sent to a CRM/backend (e.g., HubSpot/Salesforce integration)
-            console.log('Form submission simulated. Data would be sent to CRM.');
-            // Implement a custom modal or message box instead of alert()
-            const submitButton = e.target.querySelector('button[type="submit"]');
-            submitButton.textContent = 'Inquiry Sent!';
-            submitButton.classList.remove('dataflow-cta-button');
-            submitButton.classList.add('bg-green-500');
-            setTimeout(() => {
-                submitButton.textContent = 'Send Inquiry';
-                submitButton.classList.remove('bg-green-500');
-                submitButton.classList.add('dataflow-cta-button');
-            }, 3000);
+            // NOTE: e.preventDefault() is intentionally removed to allow native form submission to FormSubmit.co
+            console.log('Form submission initiated. Data sent to FormSubmit.co for email relay.');
+            
+            // Because FormSubmit causes a redirect, we don't need local success messaging here.
         });
 
 
